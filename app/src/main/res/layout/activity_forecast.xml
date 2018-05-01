@@ -37,12 +37,24 @@
                         android:layout_weight="0.16"
                         android:scaleType="fitCenter" />
 
+
+                        <TextView
+                            android:id="@+id/city_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:text="-----"
+                            android:textSize="@dimen/size_20" />
+
+
+
+
                     <TextView
                         android:id="@+id/temperature_c"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_margin="20dp"
                         android:gravity="center"
                         android:hint="--°C"
                         android:textSize="60dp"
@@ -110,9 +122,9 @@
                         android:id="@+id/recyclerView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginLeft="@dimen/size_10"
                         android:orientation="horizontal"
-                        android:layout_marginRight="20dp"
+                        android:layout_marginRight="@dimen/size_10"
                         android:layout_marginTop="20dp"
                         android:layout_marginBottom="20dp">
 

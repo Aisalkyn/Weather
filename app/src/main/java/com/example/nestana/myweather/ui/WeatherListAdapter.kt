@@ -21,9 +21,8 @@ class WeatherListAdapter (val weatherList: ArrayList<WeatherNew>) : RecyclerView
         holder?.textDate?.text = weather.date
         holder?.textMain?.text = weather.text
         holder?.textDesc?.text = weather.day
-        holder?.textTemp?.text = weather.high
+        holder?.textTemp?.text = ((((weather.high).toInt()-32)*5)/9).toString() +"°C"
         holder?.textMonth?.text = weather.month
-        //(holder?.textTemp?.text  - 32)*5/9
     }
 
     override fun getItemCount(): Int = weatherList.size

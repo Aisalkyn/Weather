@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import com.example.nestana.myweather.R
+import kotlinx.android.synthetic.main.activity_main.*
 
  class MainActivity : AppCompatActivity() {
 
@@ -14,13 +15,10 @@ import com.example.nestana.myweather.R
          super.onCreate(savedInstanceState)
          setContentView(R.layout.activity_main)
 
-         val searchText = findViewById<EditText>(R.id.editText)
-         val forecastbtn = findViewById<Button>(R.id.searchWeatherBtn)
-         forecastbtn.setOnClickListener {
-             Log.i("searchString", searchText.text.toString())
+         searchWeatherBtn.setOnClickListener {
+             Log.i("searchString", editText.text.toString())
              var i =  Intent(this@MainActivity, ForecastActivity::class.java)
-             val searchText = findViewById<EditText>(R.id.editText)
-             i.putExtra("searchString", searchText.text.toString())
+             i.putExtra("searchString", editText.text.toString())
              startActivity(i)
          }
      }

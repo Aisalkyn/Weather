@@ -35,6 +35,8 @@ class ForecastActivity : AppCompatActivity() {
                 val forecastResponse = response?.body()?.query?.results?.channel?.item?.forecast
                 //title = response?.body()?.query?.results?.channel?.title
                 city_name.text = response?.body()?.query?.results?.channel?.title
+                temperature_c.text  = ((((response?.body()?.query?.results?.channel?.item?.forecast!![0].high).toInt()-32)*5)/9).toString() +"°C"
+                city_date.text = response.body()?.query?.results?.channel?.item?.forecast!![0].date
                 for(resp in forecastResponse!!) {
                     Log.i("Text", resp.text)
                     weather.add(WeatherNew(resp.date.substring(0, 2), resp.day, resp.high, resp.low, resp.text, resp.date.substring(3, 7)))

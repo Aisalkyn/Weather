@@ -4,28 +4,35 @@
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/size_12"
     android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
 
-    <TextView
-        android:id="@+id/dateView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/size_12"
-        android:gravity="center"
-        android:textColor="@color/colorWeather"
-        android:text="-----"
-        android:textSize="16sp" />
 
-    <TextView
-        android:id="@+id/monthView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:textColor="@color/colorWeather"
-        android:text="-----"
-        android:textSize="16sp" />
+        <TextView
+            android:id="@+id/dateView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:gravity="end"
+            android:textColor="@color/colorWeather"
+            android:text="-----"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/monthView"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/colorWeather"
+            android:text="-----"
+            android:layout_marginLeft="@dimen/size_6"
+            android:textSize="16sp" />
+    </LinearLayout>
+
     <TextView
         android:id="@+id/descView"
         android:layout_width="wrap_content"
@@ -74,7 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textColor="@color/black"
-            android:textSize="15sp"
+            android:textSize="12sp"
             android:textStyle="bold" />
 
     </LinearLayout>
