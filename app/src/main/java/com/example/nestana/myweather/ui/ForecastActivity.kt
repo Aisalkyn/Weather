@@ -28,13 +28,15 @@ class ForecastActivity : AppCompatActivity() {
         Log.i("ForcastActivitySrchStr", searchTerm)
         val weather = ArrayList<WeatherNew>()
         var retriever = WeatherRetriever()
+        city_name.text = intent.extras.getString("searchString")
 
         val callback = object: Callback<Weather2> {
             override fun onResponse(call: Call<Weather2>?, response: Response<Weather2>?) {
                 Log.i("Response","Obtained")
                 val forecastResponse = response?.body()?.query?.results?.channel?.item?.forecast
                 //title = response?.body()?.query?.results?.channel?.title
-                city_name.text = response?.body()?.query?.results?.channel?.title
+                //city_name.text = response?.body()?.query?.results?.channel?.title
+
                 temperature_c.text  = ((((response?.body()?.query?.results?.channel?.item?.forecast!![0].high).toInt()-32)*5)/9).toString() +"°C"
                 city_date.text = response.body()?.query?.results?.channel?.item?.forecast!![0].date
                 for(resp in forecastResponse!!) {
